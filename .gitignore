@@ -1,0 +1,16 @@
+op-shellscript/pgdata
+op-shellscript/assets
+
+
+bookstack-shellscript/db
+bookstack-shellscript/data
+bookstack-shellscript/bs
+bookstack-shellscript/bookstacks
+bookstack-shellscript/Testing/data
+bookstack-shellscript/Testing/db
+
+gitlab-shellscript/data
+gitlab-shellscript/gitlab_config
+gitlab-shellscript/gitlab_data
+gitlab-shellscript/gitlab_logs
+

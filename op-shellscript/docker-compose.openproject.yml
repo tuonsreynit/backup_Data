@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  openproject:
+    image: openproject/openproject:15
+    container_name: openproject
+    ports:
+      - "8081:80"
+    environment:
+      OPENPROJECT_HTTPS: false
+      OPENPROJECT_SECRET_KEY_BASE: "secret"
+      OPENPROJECT_HOST__NAME: "localhost:8081"
+      OPENPROJECT_DEFAULT__LANGUAGE: "en"
+      
+    volumes:
+      - ./pgdata:/var/openproject/pgdata 
+      - ./assets:/var/openproject/assets 
+
+
+# admin: nit1234567890
+# nit: 1234567890n
+

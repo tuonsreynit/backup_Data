@@ -1,0 +1,38 @@
+version: '3.8'
+services:
+  bookstack:
+    image: linuxserver/bookstack
+    container_name: bookstack
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - ./data:/var/www/html/public/uploads
+      - ./app.env:/var/www/html/.env
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - APP_URL=http://localhost:8080
+      - APP_KEY=base64:WuyC6YsQBVkgUPx7jRxUpZOedqKJwjsmR097Vbmg2+s=
+      - DB_HOST=db
+      - DB_DATABASE=bookstack
+      - DB_USERNAME=bookstack_user
+      - DB_PASSWORD=secret
+    depends_on:
+      - db
+  db:
+    image: mysql:8.0
+    container_name: bookstack-mysql
+    restart: always
+    environment:
+      - MYSQL_DATABASE=bookstack
+      - MYSQL_USER=bookstack_user
+      - MYSQL_PASSWORD=secret
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
+      - host_cache_size=0
+    volumes:
+      - ./db:/var/lib/mysql
+
+# f29zN54GRg+Wkv+JP8jAi1x/9dJnkggT
+
+# UPDATE mysql.user SET host = 'localhost' WHERE user = 'bookstack_user' AND host = '172.19.0.3';
