@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SERVER_IP=$1
-HOME="/home/tuonsreynit/Desktop/Docker"
+HOME="$PWD"
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
 BACKUP_DIR="$HOME/backup_bs"
 FOLDERS=("bookstacks" "db" "data")  # Add folder paths

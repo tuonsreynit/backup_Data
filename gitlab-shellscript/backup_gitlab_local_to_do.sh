@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SERVER_IP=$1
-HOME="/home/tuonsreynit/Desktop/Docker"
+HOME="$PWD"
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
 BACKUP_DIR="$HOME/gitlab-backup/"
 FOLDERS=("data/gitlab_config" "data/gitlab_data" "data/gitlab_logs")  # Add folder paths

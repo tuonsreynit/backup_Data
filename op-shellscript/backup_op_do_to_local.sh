@@ -11,7 +11,7 @@ ZIP_FILE="backup_op_${TIMESTAMP}.tar.gz"
 REMOTE_DIR="/root/backup_op"
 PRIVATE_KEY_PATH="/home/tuonsreynit/.ssh/id_rsa"
 # Define variables
-LOCAL_BACKUP_DIR="/home/tuonsreynit/Desktop/Docker/local_backup"  # Local directory where backup will be saved  # Remote backup location on the droplet
+LOCAL_BACKUP_DIR="$PWD/local_backup_op"  # Local directory where backup will be saved  # Remote backup location on the droplet
 
 
 # Create local backup directory if not exists
