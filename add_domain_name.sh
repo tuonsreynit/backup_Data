@@ -25,7 +25,7 @@ cat <<EOF | tee "${CONFIG_DIR}/${DOMAIN_NAME}.conf" > /dev/null
 server {
     listen 80;
     listen [::]:80;
-    server_name ${DOMAIN_NAME}.name.site;
+    server_name ${DOMAIN_NAME};
     location / { 
         proxy_pass http://localhost:${SERVICE_PORT};
         proxy_set_header Host \$http_host;
@@ -45,6 +45,6 @@ sudo nginx -s reload
 
 # add SSL 
 echo "Adding https for our website " 
-sudo certbot --nginx -d "${DOMAIN_NAME}.name.site"
+sudo certbot --nginx -d "${DOMAIN_NAME}"
 echo "Congratulation!! "
 
