@@ -5,11 +5,10 @@ if [ -z "$SERVER_IP" ]; then
     exit 1
 fi
 
-# ZIP_FILE="backup_bs.tar.gz"
-ZIP_FILE="bookstack_backup_v3.sql"
-REMOTE_DIR="/"
+ZIP_FILE="backup"
+REMOTE_DIR="/var/db/openproject/"
 PRIVATE_KEY_PATH="/home/tuonsreynit/.ssh/id_rsa"
-LOCAL_BACKUP_DIR="$PWD/local_backup_bstack"
+LOCAL_BACKUP_DIR="$PWD/op"
 
 # Create local backup directory if it doesn't exist
 mkdir -p "$LOCAL_BACKUP_DIR"

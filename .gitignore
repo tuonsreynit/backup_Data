@@ -8,9 +8,25 @@ bookstack-shellscript/bs
 bookstack-shellscript/bookstacks
 bookstack-shellscript/Testing/data
 bookstack-shellscript/Testing/db
+bookstack-shellscript/docker-compose.bs.yml
+bookstack-shellscript/config
+gitlab-shellscript/backups
+bookstack-shellscript/local_backup_bs
+bookstack-shellscript/local_backup_bstack
+gitlab-shellscript/local_backup_gitlab
+bookstack-shellscript/backup_bs_from_local_to_do.sh
 
 gitlab-shellscript/data
 gitlab-shellscript/gitlab_config
 gitlab-shellscript/gitlab_data
 gitlab-shellscript/gitlab_logs
+gitlab-shellscript/backup_gitlab_local_to_do.sh
+gitlab-shellscript/backup_do
 
+
+openproject/compose/backup
+openproject/compose/local_backup_op
+openproject/compose/op/assets
+openproject/compose/postgresql
+openproject/compose/compose
+op-shellscript

@@ -7,10 +7,7 @@ services:
     ports:
       - "8088:80"
     volumes:
-      - ./local_backup_bstack/public/uploads:/var/www/bookstack/public/uploads
-      - ./local_backup_bstack/storage/uploads:/var/www/bookstack/storage/uploads
-      - ./local_backup_bstack/themes:/var/www/bookstack/themes
-      - ./local_backup_bstack/.env:/var/www/bookstack/.env
+      - ./config:/config
     environment:
       - PUID=1000
       - PGID=1000

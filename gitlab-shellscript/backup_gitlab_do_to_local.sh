@@ -1,36 +1,32 @@
 #!/bin/bash
-
 SERVER_IP=$1
-# Ensure SERVER_IP is provided
 if [ -z "$SERVER_IP" ]; then
     echo "Usage: $0 <SERVER_IP>"
     exit 1
 fi
-TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
-ZIP_FILE="backup_gitlab_${TIMESTAMP}.tar.gz"
-REMOTE_DIR="/root/backup_gitlab"
+
+# ZIP_FILE="backup_bs.tar.gz"
+ZIP_FILE="1736130826_2025_01_06_15.6.0_gitlab_backup.tar"
+REMOTE_DIR="/var/opt/gitlab/backups"
 PRIVATE_KEY_PATH="/home/tuonsreynit/.ssh/id_rsa"
-# Define variables
-LOCAL_BACKUP_DIR="$PWD/local_backup_gitlab"  # Local directory where backup will be saved  # Remote backup location on the droplet
+LOCAL_BACKUP_DIR="$PWD/local_backup_gitlab"
 
-
-# Create local backup directory if not exists
+# Create local backup directory if it doesn't exist
 mkdir -p "$LOCAL_BACKUP_DIR"
 
-# Transfer backup from remote server to local machine
+# Transfer backup from the remote server to the local machine
 echo "Transferring backup from remote server to local machine..."
 rsync -avz -e "ssh -i ${PRIVATE_KEY_PATH}" root@"${SERVER_IP}":"${REMOTE_DIR}/${ZIP_FILE}" "${LOCAL_BACKUP_DIR}/"
 if [ $? -ne 0 ]; then
-    echo "Error during rsync."
+    echo "Error: Failed to transfer backup using rsync."
     exit 1
 fi
 
-# Extract backup locally
-echo "Extracting backup on local machine..."
-tar -xzvf "${LOCAL_BACKUP_DIR}/${ZIP_FILE}" -C "${LOCAL_BACKUP_DIR}/"
-if [ $? -ne 0 ]; then
-    echo "Error extracting backup on local machine."
-    exit 1
-fi
-
-echo "Backup process completed successfully."
+# # Extract the backup locally
+# echo "Extracting backup on the local machine..."
+# tar -xzvf "${LOCAL_BACKUP_DIR}/${ZIP_FILE}" -C "${LOCAL_BACKUP_DIR}/"
+# if [ $? -ne 0 ]; then
+#     echo "Error: Failed to extract the backup file."
+#     exit 1
+# fi
+# echo "Backup process completed successfully."

@@ -2,27 +2,16 @@ version: '3.8'
 
 services:
   gitlab:
-    image: gitlab/gitlab-ce:latest
+    image: gitlab/gitlab-ce:15.6.0-ce.0
     container_name: gitlab
     restart: always
     hostname: 'localhost'
-    environment:
-      GITLAB_ROOT_PASSWORD: '${GITLAB_ROOT_PASSWORD}' # Secure root password from .env
     ports:
-      - '8082:80'  # HTTP
+      - '8282:80'  # HTTP
       - '443:443'  # HTTPS
       - '2222:22'  # SSH
     volumes:
       - ./data/gitlab_data:/var/opt/gitlab:rw     # Persistent data storage
       - ./data/gitlab_logs:/var/log/gitlab:rw  # Log files
-      - ./data/gitlab_config:/etc/gitlab:rw
+      - ./data/gitlab:/etc/gitlab:rw
     shm_size: '256m'
-
-# username: root
-# pwd: me@1234567890
-
-# username: nit
-# pwd: nit@1234567890
-
-
-
