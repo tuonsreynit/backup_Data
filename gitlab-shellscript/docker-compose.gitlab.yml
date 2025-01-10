@@ -5,7 +5,7 @@ services:
     image: gitlab/gitlab-ce:15.6.0-ce.0
     container_name: gitlab
     restart: always
-    hostname: 'localhost'
+    hostname: '172.17.3.45'
     ports:
       - '8282:80'  # HTTP
       - '443:443'  # HTTPS
@@ -13,5 +13,5 @@ services:
     volumes:
       - ./data/gitlab_data:/var/opt/gitlab:rw     # Persistent data storage
       - ./data/gitlab_logs:/var/log/gitlab:rw  # Log files
-      - ./data/gitlab:/etc/gitlab:rw
+      - ./data/etc/gitlab:/etc/gitlab:rw
     shm_size: '256m'

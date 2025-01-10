@@ -6,10 +6,12 @@ if [ -z "$SERVER_IP" ]; then
 fi
 
 # ZIP_FILE="backup_bs.tar.gz"
-ZIP_FILE="1736130826_2025_01_06_15.6.0_gitlab_backup.tar"
+ZIP_FILE="1736503381_2025_01_10_15.6.0_gitlab_backup.tar"
 REMOTE_DIR="/var/opt/gitlab/backups"
-PRIVATE_KEY_PATH="/home/tuonsreynit/.ssh/id_rsa"
-LOCAL_BACKUP_DIR="$PWD/local_backup_gitlab"
+# ZIP_FILE="gitlab_config_1736502963_2025_01_10.tar"
+# REMOTE_DIR="/etc/gitlab/config_backup/"
+PRIVATE_KEY_PATH="/home/ditr_llm_server/.ssh/id_rsa"
+LOCAL_BACKUP_DIR="$PWD/backup_gitlab"
 
 # Create local backup directory if it doesn't exist
 mkdir -p "$LOCAL_BACKUP_DIR"
