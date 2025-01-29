@@ -30,3 +30,16 @@ openproject/compose/op/assets
 openproject/compose/postgresql
 openproject/compose/compose
 op-shellscript
+
+Scheduler_Backup/OpenProject
+Scheduler_Backup/GitLab
+Scheduler_Backup/BookStack
+Scheduler_Backup/gitlab.log
+Scheduler_Backup/openproject.log
+Scheduler_Backup/bookstack.log
+
+openproject/compose/openproject
+
+gitlab-shellscript/backup_gitlab
+
+bookstack-shellscript/backup_bookstack
