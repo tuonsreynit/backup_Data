@@ -11,7 +11,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - APP_URL=http://172.17.3.2:8088
+      - APP_URL=http://172.17.3.45:8088
       - APP_KEY=base64:Buc7Qf0tvF0sn7gnvpHnfiQOoqOqsTHY96c52v40+cM=
       - DB_HOST=db
       - DB_DATABASE=bookstackrealdb
